@@ -1,0 +1,118 @@
+INSERT INTO facultades (id_facultades,nomb_facultades)VALUES (01,'facultad de siencias basicas e ingenieri');
+INSERT INTO facultades (id_facultades,nomb_facultades)VALUES (02,'FACULTAD DE CIENCIAS AGROPECUARIAS');
+INSERT INTO facultades (id_facultades,nomb_facultades)VALUES (03,'FACULTAD DE CIENCIAS HUMANAS Y DE LA EDU');
+INSERT INTO facultades (id_facultades,nomb_facultades)VALUES (04,'FACULTAD DE CIENCIAS ECONOMICAS');
+INSERT INTO facultades (id_facultades,nomb_facultades)VALUES (05,'FACULTAD DE CIENCIAS DE LA SALUD');
+INSERT INTO facultades (id_facultades,nomb_facultades)VALUES (06,'CERES');
+INSERT INTO titulaciones (id_titulaciones,nomb_titulaciones)VALUES (01,'pregrado');
+INSERT INTO titulaciones (id_titulaciones,nomb_titulaciones)VALUES (02,'posgrado');
+
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (01,'Técnica Profesional en Producción Pecuar',02,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (02,'Técnica Profesional en Producción Avícol',02,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (03,'Ingeniería de Sistemas',01,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (04,'Ingeniería Electrónica',01,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (05,'Licenciatura en Matemáticas y Física',03,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (06,'Economía',04,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (07,'Administración de Empresas',04,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (08,'Enfermería',05,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (09,'Tecnología en Regencia de Farmacia',05,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (10,'Licenciatura en Educación Física y Depor',03,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (11,'Ingeniería de Sistemas',06,01);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (12,'Licenciatura en Matemáticas y Física',06,01);
+
+
+
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (13,'Especialización en Ingeniería del Softwa',01,02);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (14,'Doctorado en Ciencias Agrarias',02,02);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (15,'Especialización en Acción Motriz',03,02);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (16,'Especialización en Administración de Neg',04,02);
+INSERT INTO programas (id_programas,nomb_programas,id_facultades,id_titulaciones)VALUES (17,'Especialización en Administración en Sal',05,02);
+
+
+INSERT INTO ceres (id_ceres,nomb_ceres)VALUES (01,'unillanos');
+INSERT INTO ceres (id_ceres,nomb_ceres)VALUES (02,'Ceres 1');
+INSERT INTO ceres (id_ceres,nomb_ceres)VALUES (03,'Ceres 2');
+INSERT INTO ceres (id_ceres,nomb_ceres)VALUES (04,'Ceres 3');
+INSERT INTO ceres (id_ceres,nomb_ceres)VALUES (05,'Ceres 4');
+INSERT INTO ceres (id_ceres,nomb_ceres)VALUES (06,'Ceres 5');
+
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (01,'ecuaciones diferenciales',03,01);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (02,'matematicas especiales',04,01);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (03,'quimica',01,01);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (04,'matematicas financiera',12,01);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (05,'pedagojia',05,01);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (11,'ecuaciones diferenciales',03,02);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (12,'matematicas especiales',04,02);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (13,'quimica',01,02);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (14,'matematicas financiera',12,02);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (15,'pedagojia',05,02);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (21,'ecuaciones diferenciales',03,02);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (22,'matematicas especiales',04,02);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (23,'quimica',01,02);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (24,'matematicas financiera',12,02);
+INSERT INTO cursos (id_cursos,nomb_cursos,id_programas,id_ceres)VALUES (25,'pedagojia',05,02);
+
+
+INSERT INTO vinculaciones (id_vinculaciones,nomb_vinculaciones)VALUES (01,'planta');
+INSERT INTO vinculaciones (id_vinculaciones,nomb_vinculaciones)VALUES (02,'catedratico');
+INSERT INTO vinculaciones (id_vinculaciones,nomb_vinculaciones)VALUES (03,'ocasional');
+
+INSERT INTO semestres(id_semestres,año,periodo)VALUES (01,2010,1);
+INSERT INTO semestres(id_semestres,año,periodo)VALUES (02,2012,2);
+INSERT INTO semestres(id_semestres,año,periodo)VALUES (03,2013,1);
+INSERT INTO semestres(id_semestres,año,periodo)VALUES (04,2014,2);
+INSERT INTO semestres(id_semestres,año,periodo)VALUES (05,2015,1);
+
+INSERT INTO cargos(id_cargos,nomb_cargos)VALUES (01,'representante docentes');
+INSERT INTO cargos(id_cargos,nomb_cargos)VALUES (02,'representante docentes consejo academico');
+INSERT INTO cargos(id_cargos,nomb_cargos)VALUES (03,'representante docentes consejo superior');
+INSERT INTO cargos(id_cargos,nomb_cargos)VALUES (04,'secretatio general');
+INSERT INTO cargos(id_cargos,nomb_cargos)VALUES (05,'director del programa');
+
+INSERT INTO docentes(id_docentes,nomb_docentes,fecha_ingreso)VALUES (01,'beatriz',01/02/2010);
+INSERT INTO docentes(id_docentes,nomb_docentes,fecha_ingreso)VALUES (02,'sobogal',20/04/2013);
+INSERT INTO docentes(id_docentes,nomb_docentes,fecha_ingreso)VALUES (03,'sayallin',11/08/2000);
+INSERT INTO docentes(id_docentes,nomb_docentes,fecha_ingreso)VALUES (04,'jose alvarez',05/10/2011);
+INSERT INTO docentes(id_docentes,nomb_docentes,fecha_ingreso)VALUES (05,'tirson',18/01/2015);
+
+INSERT INTO cargosdesempeñados(id_semestres,id_docentes,id_cargos)VALUES (01,02,03);
+INSERT INTO cargosdesempeñados(id_semestres,id_docentes,id_cargos)VALUES (02,05,02);
+INSERT INTO cargosdesempeñados(id_semestres,id_docentes,id_cargos)VALUES (03,01,01);
+INSERT INTO cargosdesempeñados(id_semestres,id_docentes,id_cargos)VALUES (04,04,05);
+INSERT INTO cargosdesempeñados(id_semestres,id_docentes,id_cargos)VALUES (05,03,04);				
+
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (01,05,01,01,01,20,17,40);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (02,04,02,02,01,15,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (03,03,03,03,01,00,00,40);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (04,02,02,04,01,25,35,39);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,01,01,05,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,01,01,15,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,01,01,25,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,01,01,11,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,01,01,21,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,01,01,02,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,01,01,22,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,01,01,03,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,01,01,13,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,01,01,23,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,02,01,03,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,03,01,13,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,02,01,23,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,02,01,05,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,02,01,13,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,03,01,23,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,04,01,23,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,04,01,01,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,04,01,13,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,03,01,15,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,03,01,22,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,03,01,21,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,05,01,22,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,05,01,23,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,03,01,24,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,03,01,25,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,04,01,15,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,02,01,04,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,02,01,11,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,03,01,05,01,20,30,30);
+INSERT INTO periodos(id_semestres,id_docentes,id_vinculaciones,id_cursos,grupo,autoevaluacion,evaluacionconsejo,evaluacionestudiante)VALUES (05,04,01,02,01,20,30,30);

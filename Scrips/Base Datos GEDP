@@ -1,0 +1,82 @@
+CREATE TABLE facultades(
+id_facultades VARCHAR(10) NOT NULL PRIMARY KEY,
+nomb_facultades VARCHAR(50) NOT NULL 
+);
+
+CREATE TABLE ceres(
+id_ceres VARCHAR(10) NOT NULL PRIMARY KEY,
+nomb_ceres VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE titulaciones(
+id_titulaciones varchar(10) NOT NULL PRIMARY KEY,
+nomb_titulaciones varchar(50) NOT NULL 
+);
+
+CREATE TABLE programas(
+id_programas VARCHAR(10) NOT NULL PRIMARY KEY,
+nomb_programas VARCHAR(50)NOT NULL,
+id_facultades VARCHAR(10) NOT NULL,
+id_titulaciones VARCHAR(10) NOT NULL,
+CONSTRAINT fk_id_facultades FOREIGN KEY (id_facultades) REFERENCES facultades (id_facultades),
+CONSTRAINT fk_id_tutilaciones FOREIGN KEY (id_titulaciones) REFERENCES titulaciones (id_titulaciones)
+);
+
+CREATE TABLE cursos(
+id_cursos VARCHAR(10) NOT NULL PRIMARY KEY,
+nomb_cursos VARCHAR(50) NOT NULL,
+id_programas VARCHAR(10),
+id_ceres VARCHAR(10),
+CONSTRAINT fk_id_programas FOREIGN KEY (id_programas) REFERENCES programas (id_programas),
+CONSTRAINT fk_id_ceres FOREIGN KEY (id_ceres) REFERENCES ceres (id_ceres)
+);
+
+CREATE TABLE vinculaciones(
+id_vinculaciones VARCHAR(10) NOT NULL PRIMARY KEY,
+nomb_vinculaciones VARCHAR(50) NOT NULL 
+);
+
+CREATE TABLE semestres(
+id_semestres VARCHAR(10) NOT NULL PRIMARY KEY,
+año VARCHAR(4) NOT NULL,
+periodo VARCHAR(1) NOT NULL 
+);
+
+CREATE TABLE cargos(
+id_cargos VARCHAR(10) NOT NULL PRIMARY KEY,
+nomb_cargos VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE docentes(
+id_docentes VARCHAR(15) NOT NULL PRIMARY KEY,
+nomb_docentes VARCHAR(50) NOT NULL,
+fecha_ingreso Varchar(10) NOT NULL
+);
+
+CREATE TABLE cargosdesempeñados(
+id_semestres VARCHAR(10) NOT NULL,
+id_docentes VARCHAR(10) NOT NULL,
+id_cargos VARCHAR(10) NOT NULL,
+CONSTRAINT pk_cargosdesempeñados PRIMARY KEY(id_semestres,id_docentes,id_cargos),
+CONSTRAINT fk_id_semestres FOREIGN KEY (id_semestres) REFERENCES semestres (id_semestres),
+CONSTRAINT fk_id_docentes FOREIGN KEY(id_docentes) REFERENCES docentes (id_docentes),
+CONSTRAINT fk_id_cargos FOREIGN KEY(id_cargos)REFERENCES cargos(id_cargos)
+);
+
+CREATE TABLE periodos(
+id_semestres VARCHAR(10) NOT NULL,
+id_docentes VARCHAR(15) NOT NULL,
+id_vinculaciones VARCHAR(10),
+id_cursos VARCHAR(10) NOT NULL,
+grupo VARCHAR(1),
+autoevaluacion varchar(5),
+evaluacionconsejo varchar(5),
+evaluacionestudiante varchar(5),
+
+CONSTRAINT fk_id_periodos PRIMARY key (id_semestres,id_docentes,id_cursos,grupo),
+CONSTRAINT fk_id_docentes FOREIGN KEY (id_docentes) REFERENCES docentes (id_docentes),
+CONSTRAINT fk_id_vinvulaciones FOREIGN KEY (id_vinculaciones) REFERENCES vinculaciones (id_vinculaciones),
+CONSTRAINT fk_id_cursos FOREIGN KEY (id_cursos) REFERENCES cursos (id_cursos),
+CONSTRAINT fk_id_semestres FOREIGN KEY (id_semestres) REFERENCES semestres (id_semestres)
+);
