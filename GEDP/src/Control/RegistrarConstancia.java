@@ -1,11 +1,11 @@
 package Control;
-import Limite.Cursos; 
-import Limite.Facultades;
-import Limite.Periodos;
-import Limite.Docentes;
-import Limite.Programas;
-import Limite.Vinculaciones;
-import Limite.Semestres;
+import Entidad.Cursos;
+import Entidad.Docentes;
+import Entidad.Facultades;
+import Entidad.Periodos;
+import Entidad.Programas;
+import Entidad.Semestres;
+import Entidad.Vinculaciones;
 
 public class RegistrarConstancia {
 	

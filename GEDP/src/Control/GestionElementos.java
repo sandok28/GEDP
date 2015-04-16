@@ -1,12 +1,12 @@
 package Control;
-import Limite.Cargos; 
-import Limite.Cursos;
-import Limite.Facultades;
-import Limite.Periodos;
-import Limite.Docentes;
-import Limite.Programas;
-import Limite.Titulaciones;
-import Limite.Vinculaciones;
+import Entidad.Cargos;
+import Entidad.Cursos;
+import Entidad.Docentes;
+import Entidad.Facultades;
+import Entidad.Periodos;
+import Entidad.Programas;
+import Entidad.Titulaciones;
+import Entidad.Vinculaciones;
 public class GestionElementos {
 	
 	Cargos cargos=new Cargos();

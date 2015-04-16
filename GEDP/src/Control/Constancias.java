@@ -1,15 +1,15 @@
 package Control;
-import java.util.ArrayList; 
+import java.util.ArrayList;  
 
-import Limite.Cursos; 
-import Limite.Facultades;
-import Limite.Periodos;
-import Limite.Docentes;
-import Limite.Programas;
-import Limite.Titulaciones;
-import Limite.Vinculaciones;
-import Limite.Semestres;
-import Limite.GenerarExcel;
+import Entidad.Cursos;
+import Entidad.Docentes;
+import Entidad.Facultades;
+import Entidad.GenerarExcel;
+import Entidad.Periodos;
+import Entidad.Programas;
+import Entidad.Semestres;
+import Entidad.Titulaciones;
+import Entidad.Vinculaciones;
 
 public class Constancias {
 	
@@ -23,8 +23,10 @@ public class Constancias {
 	Vinculaciones vinculaciones=new Vinculaciones();
 	GenerarExcel   Reportes=new GenerarExcel();
 	
+	
 	// Genera reporte de todo los cursos que a dictado X profesor 
 	public ArrayList<String[]> ConstanciaProfesores(String cedula){
+		System.out.println("bislfebÑIWBCEÑW");
 		ArrayList<String[]> Registrosprofesores=periodos.getRegistrosDocentes(cedula);	
 		int tamaño=Registrosprofesores.size();
 		
@@ -54,7 +56,52 @@ public class Constancias {
 	return Registrosprofesores;
 	}
 	
+	
+	
+	
 	public void ConstanciafacultadesUnillanos(String año,String periodo,String id_vinculaciones,String id_titulaciones,String id_facultades){
+		
+		ArrayList<String[]> Listafacdocentes=periodos.getRegitrosFacultadDocentes(semestres.getid(año, periodo), id_vinculaciones, id_titulaciones, id_facultades);
+		ArrayList<String[]> listafacultades=new ArrayList<String[]>();
+		periodos.MostrarTabla(Listafacdocentes);
+		int tamaño=Listafacdocentes.size();
+		for (int i = 0; i < tamaño; i++) {
+			String[] Registrosfacdocentes=Listafacdocentes.get(i);
+			periodos.MostrarTabla(Listafacdocentes);
+			
+			ArrayList<String[]> ListafacdocentesCursos=periodos.getRegistrosDocentesCursos(Registrosfacdocentes[0],semestres.getid(año, periodo));
+			int tam=ListafacdocentesCursos.size();
+		
+			for (int j = 0; j < tam; j++) {
+				String[] RegistrosfacdocentesCursos=ListafacdocentesCursos.get(j);
+				
+				String[] pantallaRegistros=new String[12];
+				pantallaRegistros[0]=Integer.toString(i+1);//numero asignado al docente
+				pantallaRegistros[1]=docentes.getnombre(Registrosfacdocentes[0]);//nombre docente
+				pantallaRegistros[2]=Registrosfacdocentes[1];//auto evaluacion
+				pantallaRegistros[3]=Registrosfacdocentes[2];//evaluacion concejo
+				pantallaRegistros[4]=RegistrosfacdocentesCursos[0];//id cursos
+				pantallaRegistros[5]=RegistrosfacdocentesCursos[1];//grupo del curso
+				pantallaRegistros[6]=cursos.getnombre(RegistrosfacdocentesCursos[0]);//nombre del curso
+				pantallaRegistros[7]=programas.getnombre(cursos.getidprogramas(RegistrosfacdocentesCursos[0]));//nombre del programa
+				pantallaRegistros[8]=RegistrosfacdocentesCursos[2];//nota estudiante
+				String promedio=periodos.promedioevaluacionesestudinte(ListafacdocentesCursos,2);//nota promedio de todos los cursos de X docente
+				pantallaRegistros[9]=promedio;
+				double porcentaje=Double.parseDouble(Registrosfacdocentes[1])+Double.parseDouble(Registrosfacdocentes[2])+Double.parseDouble(promedio);
+				pantallaRegistros[10]=Double.toString(porcentaje)+"%";//porcentaje de las evaluaciones
+				if(porcentaje>=85)pantallaRegistros[11]="Sobresaliente";//calificacion evaluaciones
+				if(porcentaje>=70&&porcentaje<85)pantallaRegistros[11]="Buena";
+			    if(porcentaje>=55&porcentaje<70)pantallaRegistros[11]="Regular";
+			    if(porcentaje<55)pantallaRegistros[11]="Insufiente";
+			    listafacultades.add(pantallaRegistros);
+			}
+		}
+		//periodos.MostrarTabla(listafacultades);
+		if(periodo.equalsIgnoreCase("1"))periodo="PRIMERO"; else periodo="segundo";
+		Reportes.ReporteFacultad(listafacultades, año, periodo, vinculaciones.getnombre(id_vinculaciones),titulaciones.getnombre(id_vinculaciones), facultades.getnombre(id_facultades),"Ni idea");
+	}
+	
+public void ConstanciaCeres(String año,String periodo,String id_vinculaciones,String id_titulaciones,String id_facultades){
 		
 		ArrayList<String[]> Listafacdocentes=periodos.getRegitrosFacultadDocentes(semestres.getid(año, periodo), id_vinculaciones, id_titulaciones, id_facultades);
 		ArrayList<String[]> listafacultades=new ArrayList<String[]>();
@@ -99,10 +146,11 @@ public class Constancias {
 	
 
 	public static void main(String[] args) {
+	
 		Constancias obj=new Constancias();
-	obj.ConstanciafacultadesUnillanos("2015","1","1","1","1");
-		
+		obj.ConstanciafacultadesUnillanos("2015","1","1","1","1");
 	//	obj.ConstanciaProfesores("1");
+		
 	}
 	
 	
